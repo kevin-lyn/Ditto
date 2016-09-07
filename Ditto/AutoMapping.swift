@@ -44,15 +44,30 @@ public enum AutoMappingStyle {
         var mapped = ""
         switch self {
         case .lowercaseSeparatedByUnderScore:
+            guard var lastVisitedChar = field.characters.first else {
+                break
+            }
             for (index, char) in field.characters.enumerated() {
                 if index == 0 {
                     mapped.append(char.lowercased())
-                } else if char.isLowercase() {
-                    mapped.append(char)
+                } else if char.isUppercase() {
+                    if !lastVisitedChar.isUppercase() {
+                        mapped.append("_")
+                        mapped.append(char.lowercased())
+                    } else {
+                        mapped.append(char.lowercased())
+                    }
+                } else if !char.isLowercase() {
+                    if lastVisitedChar.isUppercase() || lastVisitedChar.isLowercase() {
+                        mapped.append("_")
+                        mapped.append(char)
+                    } else {
+                        mapped.append(char)
+                    }
                 } else {
-                    mapped.append("_")
-                    mapped.append(char.lowercased())
+                    mapped.append(char)
                 }
+                lastVisitedChar = char
             }
         case .lowercase:
             mapped = field.lowercased()

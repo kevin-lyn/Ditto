@@ -92,7 +92,7 @@ extension Serializable {
 }
 
 extension Array where Element: Serializable {
-    func serialize() -> JSONArray {
+    public func serialize() -> JSONArray {
         var jsonArray = JSONArray()
         for serializable in self {
             jsonArray.append(serializable.serialize())
