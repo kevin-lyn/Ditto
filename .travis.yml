@@ -1,4 +1,6 @@
 language: objective-c
 osx_image: xcode8
+before_script:
+    - brew update && brew upgrade xctool
 script:
     - xctool test -project Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator
