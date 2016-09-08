@@ -1,4 +1,4 @@
-# <img src="https://cloud.githubusercontent.com/assets/1491282/18335864/2b8501d6-75b5-11e6-8bf5-276fe60792b0.png" height="22" width="20"> Ditto ![CI Status](https://travis-ci.org/kevin0571/Ditto.svg?branch=master) ![Version](http://img.shields.io/cocoapods/v/Ditto-Swift.svg?style=flag) ![License](https://img.shields.io/cocoapods/l/Ditto-Swift.svg?style=flag)
+# <img src="https://cloud.githubusercontent.com/assets/1491282/18335864/2b8501d6-75b5-11e6-8bf5-276fe60792b0.png" height="26" width="24"> Ditto ![CI Status](https://travis-ci.org/kevin0571/Ditto.svg?branch=master) ![Version](http://img.shields.io/cocoapods/v/Ditto-Swift.svg?style=flag) ![License](https://img.shields.io/cocoapods/l/Ditto-Swift.svg?style=flag)
 Ditto allows you to serialize your swift object to JSON object compatible dictionary.
 
 ## Features
@@ -44,7 +44,8 @@ let jsonArray = [exampleStruct, exampleStruct].serialize()
     "int": 1,
     "url": "https://github.com"
  ]
- * note that "anotherString" is not being serialized becuase mapping of "anotherString" is not defined in "serializableMapping"
+ note that "anotherString" is not being serialized,
+ becuase mapping of "anotherString" is not defined in "serializableMapping".
  */
  
  // Convert it to data by using JSONSerialization
@@ -73,7 +74,7 @@ let jsnObject = exampleStruct.serialize()
  "jsonObject" will be a dictionary with content:
  [
     "string": "string",
-    "anotherString": "another_string",
+    "another_string": "anotherString",
     "int": 1,
     "url": "https://github.com"
  ]
