@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8
 script:
-- xcodebuild test -project Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
+- xcodebuild test -project Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0'
 
