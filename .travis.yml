@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode8
 script:
-    - xctool test -project Ditto/Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator
+    - xctool test -project Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator
