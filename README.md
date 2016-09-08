@@ -13,12 +13,6 @@ Ditto allows you to serialize your swift object to JSON object compatible dictio
 
 ## Usage
 
-**CocoaPods**
-```swift
-platform :ios, '8.0'
-pod 'Ditto-Swift'
-```
-
 ### Overview
 ```swift
 import Ditto
@@ -129,6 +123,6 @@ let jsonObject = exampleStruct.serialize()
 ```
 
 ## TODO
-- Swift package manager and Carthage support.
+- Swift package manager, CocoaPods and Carthage support.
 - Built in JSON string converter as an alternative to JSONSerialization.
 - Benchmark.
