@@ -12,6 +12,7 @@ Ditto allows you to serialize your swift object to JSON object compatible dictio
 - Swift 3.0
 
 ## Usage
+
 **CocoaPods**
 ```swift
 platform :ios, '8.0'
