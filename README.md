@@ -49,8 +49,8 @@ let jsonArray = [exampleStruct, exampleStruct].serialize()
  becuase mapping of "anotherString" is not defined in "serializableMapping".
  */
  
- // Convert it to data by using JSONSerialization
- let jsonData = try? JSONSerialization.data(
+// Convert it to data by using JSONSerialization
+let jsonData = try? JSONSerialization.data(
     withJSONObject: jsonObject, 
     options: []
 )
