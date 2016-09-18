@@ -84,7 +84,7 @@ class DittoTests: XCTestCase {
         var testStruct = TestStruct()
         var jsonObject: JSONObject
         
-        testStruct.autoMappingStyle = .lowercaseSeparatedByUnderScore
+        testStruct.autoMappingStyle = .lowercaseSeparatedByUnderscore
         jsonObject = testStruct.serialize()
         XCTAssert(jsonObject["string"] as? String == testStruct.string)
         XCTAssert(jsonObject["another_string"] as? NSString == testStruct.anotherString)

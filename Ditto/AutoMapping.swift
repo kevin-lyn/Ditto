@@ -39,11 +39,11 @@ private extension Character {
  - upperCamelCase: firstName -> FirstName
  */
 public enum AutoMappingStyle {
-    case lowercaseSeparatedByUnderScore, lowercase, lowerCamelCase, upperCamelCase
+    case lowercaseSeparatedByUnderscore, lowercase, lowerCamelCase, upperCamelCase
     internal func map(_ field: String) -> String {
         var mapped = ""
         switch self {
-        case .lowercaseSeparatedByUnderScore:
+        case .lowercaseSeparatedByUnderscore:
             guard var lastVisitedChar = field.characters.first else {
                 break
             }
