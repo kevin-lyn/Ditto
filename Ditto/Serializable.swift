@@ -44,9 +44,6 @@ public protocol Serializable {
     func serializableMapping() -> Mapping
 }
 
-private protocol OptionalProtocol {}
-extension Optional: OptionalProtocol {}
-
 extension Serializable {
     public func serialize() -> JSONObject {
         let mapping = self.serializableMapping()
@@ -60,19 +57,14 @@ extension Serializable {
                 continue
             }
             
-            let value: Any?
-            if child.value is OptionalProtocol {
-                value = unwrapOptional(of: child.value)
-            } else {
-                value = child.value
-            }
-            
-            guard let unwrappedValue = value else {
+            let value = child.value
+            guard value is NSNull else {
                 continue
             }
-            if let serializable = unwrappedValue as? Serializable {
+            
+            if let serializable = value as? Serializable {
                 jsonObject[jsonField] = serializable.serialize()
-            } else if let convertible = unwrappedValue as? Convertible {
+            } else if let convertible = value as? Convertible {
                 jsonObject[jsonField] = convertible.convert()
             }
         }

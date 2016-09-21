@@ -26,14 +26,15 @@ extension TestClass: Convertible {
 private struct TestStruct {
     let string = "string"
     let anotherString: NSString = "anotherString"
-    let int = 1
+    let int: Int? = 1
     let int8: Int8 = 1
     let int64: Int64 = 1
     let double: Double = 1.0
     let float: Float = 1.0
     let aURL = URL(string: "http://www.google.com")
     let complexNamingWithURL123 = "complexNamingWithURL123"
-    let testClass = TestClass()
+    let testClass: TestClass? = TestClass()
+    let array = [1, 2, 3, 4, 5]
     var autoMappingStyle: AutoMappingStyle?
 }
 
@@ -45,7 +46,8 @@ extension TestStruct: Serializable {
             return [
                 "string": "str",
                 "int": "integer",
-                "testClass": "test"
+                "testClass": "test",
+                "array": "array"
             ]
         }
     }
@@ -64,7 +66,7 @@ class DittoTests: XCTestCase {
     func testConvertible() {
         let testStruct = TestStruct()
         let jsonObject = testStruct.serialize()
-        XCTAssert(jsonObject["test"] as? String == testStruct.testClass.converted)
+        XCTAssert(jsonObject["test"] as? String == testStruct.testClass?.converted)
     }
     
     func testSerializable() {
@@ -76,7 +78,8 @@ class DittoTests: XCTestCase {
         for (i, jsonObject) in jsonArray.enumerated() {
             XCTAssert(jsonObject["str"] as? String == array[i].string)
             XCTAssert(jsonObject["integer"] as? Int == array[i].int)
-            XCTAssert(jsonObject["test"] as? String == array[i].testClass.converted)
+            XCTAssert(jsonObject["array"] as! [Int] == array[i].array)
+            XCTAssert(jsonObject["test"] as? String == array[i].testClass?.converted)
         }
     }
     
@@ -86,6 +89,7 @@ class DittoTests: XCTestCase {
         
         testStruct.autoMappingStyle = .lowercaseSeparatedByUnderscore
         jsonObject = testStruct.serialize()
+        
         XCTAssert(jsonObject["string"] as? String == testStruct.string)
         XCTAssert(jsonObject["another_string"] as? NSString == testStruct.anotherString)
         XCTAssert(jsonObject["int"] as? Int == testStruct.int)
@@ -95,7 +99,7 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["a_url"] as? String == testStruct.aURL?.absoluteString)
         XCTAssert(jsonObject["complex_naming_with_url_123"] as? String == testStruct.complexNamingWithURL123)
-        XCTAssert(jsonObject["test_class"] as? String == testStruct.testClass.converted)
+        XCTAssert(jsonObject["test_class"] as? String == testStruct.testClass?.converted)
         
         testStruct.autoMappingStyle = .lowercase
         jsonObject = testStruct.serialize()
@@ -108,7 +112,7 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["aurl"] as? String == testStruct.aURL?.absoluteString)
         XCTAssert(jsonObject["complexnamingwithurl123"] as? String == testStruct.complexNamingWithURL123)
-        XCTAssert(jsonObject["testclass"] as? String == testStruct.testClass.converted)
+        XCTAssert(jsonObject["testclass"] as? String == testStruct.testClass?.converted)
         
         testStruct.autoMappingStyle = .lowerCamelCase
         jsonObject = testStruct.serialize()
@@ -121,7 +125,7 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["aURL"] as? String == testStruct.aURL?.absoluteString)
         XCTAssert(jsonObject["complexNamingWithURL123"] as? String == testStruct.complexNamingWithURL123)
-        XCTAssert(jsonObject["testClass"] as? String == testStruct.testClass.converted)
+        XCTAssert(jsonObject["testClass"] as? String == testStruct.testClass?.converted)
         
         testStruct.autoMappingStyle = .upperCamelCase
         jsonObject = testStruct.serialize()
@@ -134,6 +138,6 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["Float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["AURL"] as? String == testStruct.aURL?.absoluteString)
         XCTAssert(jsonObject["ComplexNamingWithURL123"] as? String == testStruct.complexNamingWithURL123)
-        XCTAssert(jsonObject["TestClass"] as? String == testStruct.testClass.converted)
+        XCTAssert(jsonObject["TestClass"] as? String == testStruct.testClass?.converted)
     }
 }

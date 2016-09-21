@@ -87,3 +87,50 @@ extension NSURL: Convertible {
         return self.absoluteString
     }
 }
+
+private func convertAny(any: Any) -> Any? {
+    if let convertible = any as? Convertible {
+        return convertible.convert()
+    } else if let serializable = any as? Serializable {
+        return serializable.serialize()
+    } else {
+        return nil
+    }
+}
+
+private func convertSequence<T: Sequence>(sequence: T) -> [Any] {
+    var convertedArray = [Any]()
+    for element in sequence {
+        if let element = convertAny(any: element) {
+            convertedArray.append(element)
+        }
+    }
+    return convertedArray
+}
+
+extension Array: Convertible {
+    public func convert() -> Any {
+        return convertSequence(sequence: self)
+    }
+}
+
+extension NSArray: Convertible {
+    public func convert() -> Any {
+        return convertSequence(sequence: self)
+    }
+}
+
+extension Optional: Convertible {
+    public func convert() -> Any {
+        switch self {
+        case let .some(value):
+            if let value = convertAny(any: value) {
+                return value
+            } else {
+                return NSNull()
+            }
+        default:
+            return NSNull()
+        }
+    }
+}
