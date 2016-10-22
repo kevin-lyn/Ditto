@@ -58,7 +58,7 @@ extension Serializable {
             }
             
             let value = child.value
-            guard value is NSNull else {
+            guard !(value is NSNull) else {
                 continue
             }
             
