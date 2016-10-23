@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76166CA51DBC6E0500D3B7D7 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76166CA41DBC6E0500D3B7D7 /* Serializer.swift */; };
 		7625E9CC1D7FAF5E0056A971 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625E9CB1D7FAF5E0056A971 /* Convertible.swift */; };
 		7625E9CE1D7FB1E80056A971 /* ConvertibleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625E9CD1D7FB1E80056A971 /* ConvertibleTypes.swift */; };
 		768125191D7EF01100856E0C /* Ditto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7681250F1D7EF01100856E0C /* Ditto.framework */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76166CA41DBC6E0500D3B7D7 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		7625E9CB1D7FAF5E0056A971 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
 		7625E9CD1D7FB1E80056A971 /* ConvertibleTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertibleTypes.swift; sourceTree = "<group>"; };
 		7681250F1D7EF01100856E0C /* Ditto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ditto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				7625E9CB1D7FAF5E0056A971 /* Convertible.swift */,
 				7625E9CD1D7FB1E80056A971 /* ConvertibleTypes.swift */,
 				7681252D1D7EFC2E00856E0C /* Serializable.swift */,
+				76166CA41DBC6E0500D3B7D7 /* Serializer.swift */,
 				7681252F1D7F15F200856E0C /* AutoMapping.swift */,
 			);
 			path = Ditto;
@@ -213,6 +216,7 @@
 				7625E9CE1D7FB1E80056A971 /* ConvertibleTypes.swift in Sources */,
 				768125301D7F15F200856E0C /* AutoMapping.swift in Sources */,
 				7625E9CC1D7FAF5E0056A971 /* Convertible.swift in Sources */,
+				76166CA51DBC6E0500D3B7D7 /* Serializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

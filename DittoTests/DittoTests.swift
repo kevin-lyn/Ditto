@@ -18,7 +18,7 @@ private class TestClass {
 }
 
 extension TestClass: Convertible {
-    func convert() -> Any {
+    func convert() -> JSONValue? {
         return converted
     }
 }
@@ -65,7 +65,7 @@ class DittoTests: XCTestCase {
     
     func testConvertible() {
         let testStruct = TestStruct()
-        let jsonObject = testStruct.serialize()
+        let jsonObject = testStruct.serialize() as JSONObject
         XCTAssert(jsonObject["test"] as? String == testStruct.testClass?.converted)
     }
     
@@ -74,8 +74,12 @@ class DittoTests: XCTestCase {
         for _ in 0..<10 {
             array.append(TestStruct())
         }
-        let jsonArray = array.serialize()
+        let jsonArray = array.serialize() as JSONArray
         for (i, jsonObject) in jsonArray.enumerated() {
+            guard let jsonObject = jsonObject as? JSONObject else {
+                XCTAssert(false)
+                continue
+            }
             XCTAssert(jsonObject["str"] as? String == array[i].string)
             XCTAssert(jsonObject["integer"] as? Int == array[i].int)
             XCTAssert(jsonObject["array"] as! [Int] == array[i].array)
@@ -93,8 +97,8 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["string"] as? String == testStruct.string)
         XCTAssert(jsonObject["another_string"] as? NSString == testStruct.anotherString)
         XCTAssert(jsonObject["int"] as? Int == testStruct.int)
-        XCTAssert(jsonObject["int_8"] as? NSNumber == NSNumber(value: testStruct.int8))
-        XCTAssert(jsonObject["int_64"] as? NSNumber == NSNumber(value: testStruct.int64))
+        XCTAssert(jsonObject["int_8"] as? Int8 == testStruct.int8)
+        XCTAssert(jsonObject["int_64"] as? Int64 == testStruct.int64)
         XCTAssert(jsonObject["double"] as? Double == testStruct.double)
         XCTAssert(jsonObject["float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["a_url"] as? String == testStruct.aURL?.absoluteString)
@@ -106,8 +110,8 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["string"] as? String == testStruct.string)
         XCTAssert(jsonObject["anotherstring"] as? NSString == testStruct.anotherString)
         XCTAssert(jsonObject["int"] as? Int == testStruct.int)
-        XCTAssert(jsonObject["int8"] as? NSNumber == NSNumber(value: testStruct.int8))
-        XCTAssert(jsonObject["int64"] as? NSNumber == NSNumber(value: testStruct.int64))
+        XCTAssert(jsonObject["int8"] as? Int8 == testStruct.int8)
+        XCTAssert(jsonObject["int64"] as? Int64 == testStruct.int64)
         XCTAssert(jsonObject["double"] as? Double == testStruct.double)
         XCTAssert(jsonObject["float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["aurl"] as? String == testStruct.aURL?.absoluteString)
@@ -119,8 +123,8 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["string"] as? String == testStruct.string)
         XCTAssert(jsonObject["anotherString"] as? NSString == testStruct.anotherString)
         XCTAssert(jsonObject["int"] as? Int == testStruct.int)
-        XCTAssert(jsonObject["int8"] as? NSNumber == NSNumber(value: testStruct.int8))
-        XCTAssert(jsonObject["int64"] as? NSNumber == NSNumber(value: testStruct.int64))
+        XCTAssert(jsonObject["int8"] as? Int8 == testStruct.int8)
+        XCTAssert(jsonObject["int64"] as? Int64 == testStruct.int64)
         XCTAssert(jsonObject["double"] as? Double == testStruct.double)
         XCTAssert(jsonObject["float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["aURL"] as? String == testStruct.aURL?.absoluteString)
@@ -132,8 +136,8 @@ class DittoTests: XCTestCase {
         XCTAssert(jsonObject["String"] as? String == testStruct.string)
         XCTAssert(jsonObject["AnotherString"] as? NSString == testStruct.anotherString)
         XCTAssert(jsonObject["Int"] as? Int == testStruct.int)
-        XCTAssert(jsonObject["Int8"] as? NSNumber == NSNumber(value: testStruct.int8))
-        XCTAssert(jsonObject["Int64"] as? NSNumber == NSNumber(value: testStruct.int64))
+        XCTAssert(jsonObject["Int8"] as? Int8 == testStruct.int8)
+        XCTAssert(jsonObject["Int64"] as? Int64 == testStruct.int64)
         XCTAssert(jsonObject["Double"] as? Double == testStruct.double)
         XCTAssert(jsonObject["Float"] as? Float == testStruct.float)
         XCTAssert(jsonObject["AURL"] as? String == testStruct.aURL?.absoluteString)

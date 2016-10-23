@@ -6,13 +6,39 @@
 //  Copyright © 2016 Kevin. All rights reserved.
 //
 
+/// Types of values that are allowed in JSON
+public protocol JSONValue {}
+
+extension String: JSONValue {}
+extension Int: JSONValue {}
+extension UInt: JSONValue {}
+extension Int8: JSONValue {}
+extension Int16: JSONValue {}
+extension Int32: JSONValue {}
+extension Int64: JSONValue {}
+extension UInt8: JSONValue {}
+extension UInt16: JSONValue {}
+extension UInt32: JSONValue {}
+extension UInt64: JSONValue {}
+extension Float: JSONValue {}
+extension Double: JSONValue {}
+extension Bool: JSONValue {}
+extension NSString: JSONValue {}
+extension NSNumber: JSONValue {}
+extension Dictionary: JSONValue {}
+extension Array: JSONValue {}
+
+// Type alias
+public typealias JSONObject = [String: JSONValue?]
+public typealias JSONArray = [JSONValue?]
+
 /**
  Convertible defines how a swift obejct should be converted to a JSON object compatible value.
  
  Example:
  ```
  extension URL: Convertible {
-    public func convert() -> Any {
+    public func convert() -> JSONValue? {
         return self.absoluteString
     }
  }
@@ -27,5 +53,5 @@ public protocol Convertible {
      
      - returns: JSON object compatible value.
      */
-    func convert() -> Any?
+    func convert() -> JSONValue?
 }
