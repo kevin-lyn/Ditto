@@ -6,7 +6,7 @@
 //  Copyright © 2016 Kevin. All rights reserved.
 //
 
-public typealias JSONObject = [String: Any]
+public typealias JSONObject = [String: Any?]
 public typealias JSONArray = [JSONObject]
 
 /// Mapping defines how a object field should be mapped to JSON object field.
@@ -58,10 +58,6 @@ extension Serializable {
             }
             
             let value = child.value
-            guard !(value is NSNull) else {
-                continue
-            }
-            
             if let serializable = value as? Serializable {
                 jsonObject[jsonField] = serializable.serialize()
             } else if let convertible = value as? Convertible {

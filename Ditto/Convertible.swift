@@ -27,5 +27,5 @@ public protocol Convertible {
      
      - returns: JSON object compatible value.
      */
-    func convert() -> Any
+    func convert() -> Any?
 }
