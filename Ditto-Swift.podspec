@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
 
   s.source_files = 'Ditto/*.swift'
+  s.module_name = 'Ditto'
 end
