@@ -111,7 +111,7 @@ private func convertAny(any: Any) -> JSONValue? {
 }
 
 private func convertSequence<T: Sequence>(sequence: T) -> [Any] {
-    var convertedArray = [Any?]()
+    var convertedArray = [Any]()
     for element in sequence {
         if let element = convertAny(any: element) {
             convertedArray.append(element)
