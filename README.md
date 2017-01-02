@@ -13,6 +13,12 @@ Ditto allows you to serialize your swift object to JSON object compatible dictio
 
 ## Usage
 
+**CocoaPods**
+```ruby
+platform :ios, '8.0'
+pod 'Ditto-Swift'
+```
+
 ### Overview
 ```swift
 import Ditto
