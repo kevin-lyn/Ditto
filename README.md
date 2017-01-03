@@ -42,6 +42,8 @@ extension ExampleStruct: Serializable {
 
 // Serialize ExampleStruct
 let exampleStruct = ExampleStruct()
+
+// To Dictionary
 let jsonObject = exampleStruct.serialize()
 let jsonArray = [exampleStruct, exampleStruct].serialize()
 /*
@@ -55,11 +57,11 @@ let jsonArray = [exampleStruct, exampleStruct].serialize()
  becuase mapping of "anotherString" is not defined in "serializableMapping".
  */
  
-// Convert it to data by using JSONSerialization
-let jsonData = try? JSONSerialization.data(
-    withJSONObject: jsonObject, 
-    options: []
-)
+// To String
+let jsonObjectString: String = exampleStruct.serialize()
+
+// To Data
+let jsonObjectData: Data = exampleStruct.serialize()
 ```
 
 ### Auto Mapping
