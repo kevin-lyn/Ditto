@@ -44,8 +44,8 @@ extension ExampleStruct: Serializable {
 let exampleStruct = ExampleStruct()
 
 // To Dictionary
-let jsonObject = exampleStruct.serialize()
-let jsonArray = [exampleStruct, exampleStruct].serialize()
+let jsonObject: JSONObject = exampleStruct.serialize()
+let jsonArray: [JSONObject] = [exampleStruct, exampleStruct].serialize()
 /*
  "jsonObject" will be a dictionary with content:
  [
