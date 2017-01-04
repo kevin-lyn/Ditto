@@ -86,10 +86,11 @@ extension Array where Element: Convertible {
 // MARK: Helpers
 
 private func stringify(jsonValue: JSONValue?) -> String {
+    guard let jsonValue = jsonValue else {
+        return "null"
+    }
     let string: String
     switch jsonValue {
-    case nil:
-        string = "null"
     case is Integer: fallthrough
     case is Float: fallthrough
     case is Double: fallthrough
