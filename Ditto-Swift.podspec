@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Ditto-Swift'
-  s.version = '1.0.1'
+  s.version = '1.0.2'
   s.license = 'MIT'
   s.summary = 'Serialize swift object to JSON object'
   s.homepage = 'https://github.com/kevin0571/Ditto'
