@@ -62,7 +62,7 @@ let jsonArray: [JSONObject] = [exampleStruct, exampleStruct].serialize()
  "jsonObject" will be a dictionary with content:
  [
     "str": "string",
-    "int": 1,
+    "integer": 1,
     "url": "https://github.com"
  ]
  note that "anotherString" is not being serialized,
@@ -141,8 +141,3 @@ let jsonObject = exampleStruct.serialize()
  ]
  */
 ```
-
-## TODO
-- Swift package manager, CocoaPods and Carthage support.
-- Built in JSON string converter as an alternative to JSONSerialization.
-- Benchmark.
