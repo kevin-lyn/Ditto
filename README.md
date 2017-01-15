@@ -19,6 +19,18 @@ platform :ios, '8.0'
 pod 'Ditto-Swift'
 ```
 
+**Carthage**
+```ruby
+github "kevin0571/Ditto"
+```
+
+**Swift Package Manager**
+```ruby
+dependencies: [
+    .Package(url: "https://github.com/kevin0571/Ditto.git", majorVersion: 1)
+]
+```
+
 ### Overview
 ```swift
 import Ditto
