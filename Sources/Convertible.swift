@@ -6,6 +6,8 @@
 //  Copyright © 2016 Kevin. All rights reserved.
 //
 
+import Foundation
+
 /// Types of values that are allowed in JSON
 public protocol JSONValue {}
 
