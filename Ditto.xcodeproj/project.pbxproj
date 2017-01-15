@@ -15,6 +15,16 @@
 		OBJ_26 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Serializer.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		765E44861E2BDEF80040E71A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_17;
+			remoteInfo = Ditto;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		765E447D1E2BD5D70040E71A /* DittoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DittoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		765E447F1E2BD5D70040E71A /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -63,14 +73,13 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_7 /* Sources */,
 				765E447E1E2BD5D70040E71A /* Tests */,
 				OBJ_15 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -99,6 +108,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				765E44871E2BDEF80040E71A /* PBXTargetDependency */,
 			);
 			name = DittoTests;
 			productName = Tests;
@@ -143,7 +153,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,6 +196,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		765E44871E2BDEF80040E71A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_17 /* Ditto */;
+			targetProxy = 765E44861E2BDEF80040E71A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		765E44831E2BD5D70040E71A /* Debug */ = {
@@ -377,6 +395,7 @@
 				765E44841E2BD5D70040E71A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		OBJ_18 /* Build configuration list for PBXNativeTarget "Ditto" */ = {
 			isa = XCConfigurationList;
