@@ -1,4 +1,4 @@
-# <img src="https://cloud.githubusercontent.com/assets/1491282/18335864/2b8501d6-75b5-11e6-8bf5-276fe60792b0.png" height="26" width="24"> Ditto ![CI Status](https://travis-ci.org/kevin0571/Ditto.svg?branch=master) ![Version](http://img.shields.io/cocoapods/v/Ditto-Swift.svg?style=flag) ![License](https://img.shields.io/cocoapods/l/Ditto-Swift.svg?style=flag)
+# <img src="https://cloud.githubusercontent.com/assets/1491282/18335864/2b8501d6-75b5-11e6-8bf5-276fe60792b0.png" height="26" width="24"> Ditto ![CI Status](https://travis-ci.org/kevin0571/Ditto.svg?branch=master) ![Version](http://img.shields.io/cocoapods/v/Ditto-Swift.svg?style=flag) ![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg) ![Swift Pacakge Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg) ![License](https://img.shields.io/cocoapods/l/Ditto-Swift.svg?style=flag)
 Ditto allows you to serialize your swift object to JSON object compatible dictionary.
 
 ## Features
