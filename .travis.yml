@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode8.2
 script:
-- xcodebuild test -project Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator -destination
+- xcodebuild test -project Ditto.xcodeproj -scheme Ditto -sdk iphonesimulator
 
