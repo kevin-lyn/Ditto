@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "769999261F3F03F000EC035C"
-               BuildableName = "Ditto-tvOS.framework"
+               BuildableName = "Ditto.framework"
                BlueprintName = "Ditto-tvOS"
                ReferencedContainer = "container:Ditto.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7699992E1F3F03F000EC035C"
-               BuildableName = "Ditto-tvOSTests.xctest"
+               BuildableName = "Ditto-Tests.xctest"
                BlueprintName = "Ditto-tvOSTests"
                ReferencedContainer = "container:Ditto.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "769999261F3F03F000EC035C"
-            BuildableName = "Ditto-tvOS.framework"
+            BuildableName = "Ditto.framework"
             BlueprintName = "Ditto-tvOS"
             ReferencedContainer = "container:Ditto.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "769999261F3F03F000EC035C"
-            BuildableName = "Ditto-tvOS.framework"
+            BuildableName = "Ditto.framework"
             BlueprintName = "Ditto-tvOS"
             ReferencedContainer = "container:Ditto.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "769999261F3F03F000EC035C"
-            BuildableName = "Ditto-tvOS.framework"
+            BuildableName = "Ditto.framework"
             BlueprintName = "Ditto-tvOS"
             ReferencedContainer = "container:Ditto.xcodeproj">
          </BuildableReference>
